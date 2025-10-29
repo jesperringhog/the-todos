@@ -1,41 +1,75 @@
 import "./style.css";
 
-document.body.className = "bg-dark";
-
-const app = document.getElementById("app");
-if(app!== null) {
-    app.id = "todoContainer";
-}
-
-//Todos heading
-const curlyBraceOpen = document.createElement("p");
-const heading = document.createElement("h1");
-const curlyBraceClose = document.createElement("p");
-const headingContainer = document.createElement("div");
-const subHeading = document.createElement("h3");
-
-curlyBraceOpen.innerHTML = "{";
-curlyBraceOpen.classList = "display-1 text-warning pt-5";
-heading.innerHTML = "Todos to be done";
-curlyBraceClose.innerHTML = "}";
-curlyBraceClose.classList = "display-1 text-warning pt-5";
-heading.classList = "display-1 text-primary pt-5";
-headingContainer.className = "d-flex";
-subHeading.innerHTML = "one by one, everyday (in a loop)";
-subHeading.classList = "text-info pb-5";
-app.classList = "d-flex flex-column align-items-center";
-
-headingContainer.append(curlyBraceOpen, heading, curlyBraceClose)
-app.append(headingContainer, subHeading);
-
-
-
-//Todos array
-const todoList = [
-    "Don't call snooze!", 
-    "Click coffee maker", 
-    "If cat's hungry, feed cat", 
-    "HouseLeave ..for a walk", 
-    "Return home",    
+const todos = [
+    "G",
+    "Skapa en lista", 
+    "Presentera listan på skärmen",
+    "Klickhändelse/ta bort todo/markera som klar",
+    "Implementera ett grafiskt ramverk",
+    "VG",
+    "Visa klara todos i ny lista",
+    "Skapa formulär för nya todos",
+    "Lägg till möjligheten att kunna sortera",
 ];
 
+//funktion för att lägga till klara uppgifter i ny lista
+const createHtmlForDones = () => {
+    const ulDones = document.createElement("ul");
+
+    ulDones.innerHTML = "";
+    ulDones.className = "m-5";
+
+    todos.forEach((todo) => {
+        const inputDone = document.createElement("input");
+        const liDone = document.createElement("li");
+        const divDone = document.createElement("div");
+
+        inputDone.type = "checkbox";
+        liDone.innerHTML = todo;
+        liDone.style.listStyle = "none";
+        divDone.classList = "d-flex gap-3 m-3";
+
+        divDone.append(inputDone, liDone);
+        ulDones.appendChild(divDone);
+    });
+    
+    app.appendChild(ulDones);
+};
+
+
+//funktion för att visa Todos
+const createHtmlForTodos = () => {
+    const app = document.getElementById("app");
+    const ul = document.createElement("ul");
+
+    app.innerHTML = "";
+    ul.className = "m-5";
+
+    todos.forEach((todo, i) => {
+        const input = document.createElement("input");
+        const li = document.createElement("li");
+        const div = document.createElement("div");
+
+        input.type = "checkbox";
+        li.innerHTML = todo;
+        li.style.listStyle = "none";
+        div.classList = "d-flex gap-3 m-3";
+
+        input.addEventListener("click", () => {
+            todos.splice(i, 1);
+            console.log(todos);
+            createHtmlForTodos();
+
+            //anropa funktion för att lägga till klara uppgifter i ny lista
+        });
+
+        div.append(input, li);
+        ul.appendChild(div);
+    });
+    
+    app.appendChild(ul);
+};
+
+createHtmlForTodos();
+
+createHtmlForDones();
