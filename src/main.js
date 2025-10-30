@@ -1,7 +1,26 @@
 import "./style.css";
 
+const formTodo = document.getElementById("formTodo");
+const labelTodo = document.createElement("label");
+const inputTodo = document.createElement("input");
+const buttonTodo = document.createElement("button");
+
+labelTodo.innerHTML = "Todo";
+inputTodo.placeholder = "to be made";
+buttonTodo.innerHTML = "with a click";
+
+formTodo.append(labelTodo, inputTodo, buttonTodo);
+
+formTodo.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    todos.push(inputTodo.value);
+    console.log(todos);
+    createHtmlForTodos();
+});
+
+
 const todos = [
-    "Skapa formulär för nya todos",
     "Lägg till möjligheten att kunna sortera",
 ];
 
