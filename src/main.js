@@ -1,5 +1,9 @@
 import "./style.css";
 
+const main = document.getElementById("main");
+main.classList = "d-flex flex-column align-items-center";
+
+//add new todo through form
 const formTodo = document.getElementById("formTodo");
 const labelTodo = document.createElement("label");
 const inputTodo = document.createElement("input");
@@ -15,18 +19,41 @@ formTodo.addEventListener("submit", (e) => {
     e.preventDefault();
 
     todos.push(inputTodo.value);
-    console.log(todos);
     createHtmlForTodos();
 });
 
+//sort todos 
+const sortContainer = document.getElementById("sortContainer");
+const iconAlpha = document.createElement("i");
+const iconReverse = document.createElement("i");
 
+iconAlpha.innerHTML = "Alpha";
+iconReverse.innerHTML = "Reverse";
+sortContainer.classList = "d-flex gap-5";
+
+sortContainer.append(iconAlpha, iconReverse);
+
+iconAlpha.addEventListener("click", () => {
+    todos.sort();
+    createHtmlForTodos();
+});
+
+iconReverse.addEventListener("click", () => {
+    todos.reverse();
+    createHtmlForTodos();
+});
+
+//arrays
 const todos = [
     "Lägg till möjligheten att kunna sortera",
+    "Skapa och sortera i nya js-filer",
+    "Implementera Bootstrap"
 ];
 
 const dones = [];
 
 
+//remove todo from todos -> add it to dones
 const createHtmlForTodos = () => {
     const todosContainer = document.getElementById("todosContainer");
     const ul = document.createElement("ul");
@@ -52,6 +79,7 @@ const createHtmlForTodos = () => {
     todosContainer.appendChild(ul);
 };
 
+//remove todo from dones -> add it to todos
 const createHtmlForDones = () => {
     const donesContainer = document.getElementById("donesContainer");
     const ulDones = document.createElement("ul");
@@ -74,5 +102,7 @@ const createHtmlForDones = () => {
     donesContainer.appendChild(ulDones);
 };
 
+//show todos
 createHtmlForTodos();
+//show dones
 createHtmlForDones();
