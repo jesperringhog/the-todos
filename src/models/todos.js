@@ -1,5 +1,7 @@
 export const todos = [
-    "Lägg till möjligheten att kunna sortera",
-    "Skapa och sortera i nya js-filer",
-    "Implementera Bootstrap"
+    "Don't snooze();",
+    "Click coffee maker",
+    "If(cat === hungry) {feed cat}",
+    "HouseLeave ..for a walk",
+    "Return home"
 ];
