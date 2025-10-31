@@ -9,10 +9,24 @@ document.body.className = "bg-dark";
 const main = document.getElementById("main");
 main.classList = "d-flex flex-column align-items-center";
 
-const mainHeading = document.createElement("h1");
-mainHeading.innerHTML = "<=( ToBeDo )=>";
-mainHeading.classList = "text-warning m-5 display-1";
-main.insertBefore(mainHeading, formTodo);
+//create header
+const createHtmlHeader = () => {
+    const header = document.createElement("header");
+    const curlyBraceOpen = document.createElement("h1");
+    const mainHeading = document.createElement("h1");
+    const curlyBraceClose = document.createElement("h1");
+
+    curlyBraceOpen.innerHTML = "{";
+    mainHeading.innerHTML = "The Todos";
+    curlyBraceClose.innerHTML = "}";
+    curlyBraceOpen.classList = "text-warning display-1";
+    mainHeading.classList = "text-primary display-1";
+    curlyBraceClose.classList = "text-warning display-1";
+    header.classList = "d-flex gap-2 m-5";
+
+    header.append(curlyBraceOpen, mainHeading, curlyBraceClose);
+    main.insertBefore(header, formTodo);
+};
 
 //add new todo through form
 const createHtmlFormTodo = () => {
@@ -42,8 +56,10 @@ const createHtmlFormTodo = () => {
     formTodo.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        todos.push(inputTodo.value);
-        createHtmlTodos();
+        if(inputTodo.value.length > 0) {
+            todos.push(inputTodo.value.trim());
+            createHtmlTodos();
+        };
     });
 };
 
@@ -88,6 +104,8 @@ const createHtmlSortTodos = () => {
     });
 };
 
+//show header
+createHtmlHeader();
 //show formTodos
 createHtmlFormTodo();
 //show sortTodos
