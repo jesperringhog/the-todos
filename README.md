@@ -23,10 +23,10 @@ Clone the repo:
 ```bash
 git clone https://github.com/jesperringhog/the-todos.git
 cd the-todos
-npm install
-npm run dev
 ```
-Then open the project in your browser (no build tools required).
+Then open the project in your browser.
+
+Note: No build step is required unless additional tooling is added.
 
 ## Project Structure
 
