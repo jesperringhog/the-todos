@@ -1,4 +1,3 @@
-//create header
 export const createHtmlHeader = () => {
     const header = document.createElement("header");
     const curlyBraceOpen = document.createElement("h1");

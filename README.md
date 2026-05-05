@@ -1,42 +1,54 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/R4VHVPzD)
-# Inlämningsuppgift Todo
+# The Todos
 
-I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
-Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.
+This is my first individual school assignment where I built a simple todo application using JavaScript and Bootstrap.
 
-## Betyg G
+## Features
 
-- Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter)
-- Presentera denna på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
-- Implementera klickhändelse för att hantera borttagandet av en todo.
-- Todo tas bort från skärmen och **markeras som klar i javascript-listan**.
-- Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. bootstrap, material ui, tailwind eller liknande :)
+- Predefined list of todos (hardcoded)
+- Add new todos via form input
+- Mark todos as done / undone
+- Remove todos from the list
+- Basic UX feedback for task state changes
 
-## Betyg VG
+## Tech Stack
 
-- Alla punkter under G
-- Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
-- Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
-- Kunna sortera ordningen på dina todos
+- JavaScript (Vanilla)
+- HTML & CSS
+- Bootstrap
 
-## Allmänt
+## Framework
 
-Projektet ni har är ett vite-projekt. D.v.s. ni måste köra:
+- Bootstrap
 
-```shell
-npm i
+## Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/jesperringhog/the-todos.git
+cd the-todos
+npm install
+npm run dev
 ```
+Then open the project in your browser (no build tools required).
 
-och
+## Project Structure
 
-```shell
-npm run dev 
-```
+/data    – initial todo data
+/utils   – utility functions (logic separated by responsibility)
 
-för att köra projektet.
+## What I Learned
 
-- Det finns många sätt att lösa denna uppgift på. Om ni känner er osäkra på någonting, fråga hellre någon gång för mycket så att ni känner er säkra på vad ni utvecklar.
-- Ni får gärna ändra strukturen i projektet, detta är bara en grund.
-- Börja med att planera ert arbete, börja inte med Visual Studio Code, även om det är lockande.
-- Gör ert bästa att inte stressa. Lättare sagt än gjort, jag vet. Men ingen mår bättre av att stressa.
-- Ha roligt, skratta när det blir fel och fortsätt att vara nyfiken :)
+- JavaScript fundamentals in practice
+- DOM manipulation and event handling
+- Working with arrays and state updates
+- Splitting logic into reusable functions
+- Using a CSS framework for faster UI development
+
+## Future Improvements
+
+- Refactor and improve code quality with new knowledge
+- Store todos using JSON or localStorage
+- Reduce code repetition (DRY principle)
+- Keep logic simple and readable (KISS principle)
+- Improve responsive design and overall UX

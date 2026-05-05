@@ -1,7 +1,6 @@
 import { todos } from "../data/todos";
 import { createHtmlTodos } from "./todosUtil";
 
-//add new todo through form
 export const createHtmlFormTodo = () => {
     const formTodo = document.getElementById("formTodo");
     const labelTodo = document.createElement("label");

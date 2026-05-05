@@ -2,7 +2,6 @@ import { todos } from "../data/todos";
 import { dones } from "../data/dones";
 import { createHtmlTodos } from "./todosUtil";
 
-//create dones -> remove done from dones -> add it to todos
 export const createHtmlDones = () => {
     const donesContainer = document.getElementById("donesContainer");
     const headingDones = document.createElement("h2");

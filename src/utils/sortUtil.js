@@ -1,7 +1,6 @@
 import { todos } from "../data/todos";
 import { createHtmlTodos } from "./todosUtil";
 
-//sort todos 
 export const createHtmlSortTodos = () => {
     const sortContainer = document.getElementById("sortContainer");
     const iconAlpha = document.createElement("i");
