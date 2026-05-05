@@ -16,6 +16,8 @@ This is my first individual school assignment where I built a simple todo applic
 - HTML & CSS
 - Bootstrap
 
+Deployment: GitHub Actions
+
 ## Installation
 
 Clone the repo:
@@ -48,3 +50,7 @@ Note: No build step is required unless additional tooling is added.
 - Reduce code repetition (DRY principle)
 - Keep logic simple and readable (KISS principle)
 - Improve responsive design and overall UX
+
+## Repository
+
+https://github.com/jesperringhog/the-todos.git
