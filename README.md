@@ -16,10 +16,6 @@ This is my first individual school assignment where I built a simple todo applic
 - HTML & CSS
 - Bootstrap
 
-## Framework
-
-- Bootstrap
-
 ## Installation
 
 Clone the repo:
